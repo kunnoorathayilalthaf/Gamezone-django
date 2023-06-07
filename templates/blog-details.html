@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game zone | Blog</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/plyr.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="{% url 'home' %}">
+                            <h4 style="color: white; font-weight: bold;">Game <span style="color: rgb(221, 41, 41);">Z</span>one</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="home"><a href="{% url 'home' %}">Homepage</a></li>
+                                <li><a href="{% url 'categories' %}">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="{% url 'categories' %}">Categories</a></li>
+                                        <li><a href="{% url 'blogdetails' %}">Blog</a></li>
+                                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                                        <li><a href="{% url 'login' %}">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li ><a href="{% url 'signup' %}">Signup</a></li>
+                                <li class="active"><a href="{% url 'blogdetails' %}">Blog</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                <li><span class="active" style="color: #ffff; font-weight: bold; font-size: 15px;"><span class="icon_profile"></span> {{request.user.username|title}}</span></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="{% url 'wishlist' %}"><span class="icon_heart"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="blog__details__title">
+                        <h2 style="color: white; font-weight: bold;">Game <span style="color: rgb(221, 41, 41);">Z</span>one</h2>
+                    </div>
+                </div>
+                <div class="hero__slider owl-carousel">
+                    <div class="hero__items set-bg" data-setbg="{% static 'img\trending\8978277.jpg' %}">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="hero__text">
+                                    <h2>Mini Games Online platform</h2>
+                                    <p>Play and Enjoy</p>
+                                    <a href="{% url 'categories' %}"><span>Play Now</span> <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__items set-bg" data-setbg="{% static 'img\trending\8972568.jpg' %}">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="hero__text">
+                                    <h2>Little Games</h2>
+                                    <p>Play and Enjoy</p>
+                                    <a href="#"><span>Play Now</span> <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__items set-bg" data-setbg="{% static 'img\trending\8972583.jpg' %}">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="hero__text">
+                                    <h2>Amazing Games are waiting for you</h2>
+                                    <p>Play and Enjoy</p>
+                                    <a href="#"><span>Play Now</span> <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="blog__details__content">
+                        <div class="blog__details__text">
+                            <p>Welcome to Game Zone - Your Ultimate Destination for Mini Games Online!
+
+                                At Game Zone, we are passionate about bringing you the most thrilling and captivating gaming experience right at your fingertips. Our website is designed to cater to gamers of all ages and skill levels, providing a diverse collection of mini games that will keep you entertained for hours on end.
+                                
+                                As avid gamers ourselves, we understand the joy and excitement that comes from immersing yourself in the virtual world of gaming. That's why we have carefully curated a wide range of mini games to suit every taste and preference. Whether you're a puzzle enthusiast, an action seeker, or a fan of strategy games, Game Zone has got you covered.
+                                
+                                With our user-friendly interface, navigating through our vast game library is a breeze. We strive to ensure that you have a seamless and enjoyable gaming experience from the moment you land on our website. You can easily browse and discover new games, search for specific titles, or explore different genres to find your next gaming obsession.
+                                
+                                One of the best features of Game Zone is the ability to play our mini games directly in your browser. There's no need to download or install any software, saving you precious time and computer memory. You can dive right into the action with just a few clicks, no matter where you are or what device you're using.
+                                
+                                We also believe in fostering a sense of community among gamers. At Game Zone, you can connect with fellow players, challenge your friends to beat your high scores, and share your gaming achievements. Join our vibrant and passionate community to engage in discussions, exchange tips and tricks, and stay up-to-date with the latest gaming news.
+                                
+                                Your satisfaction and enjoyment are our top priorities. That's why we are committed to continuously updating our game collection, introducing new features, and providing exceptional customer support. We value your feedback and suggestions, as they help us enhance your gaming experience and make Game Zone your go-to destination for mini games online.
+                                
+                                So, what are you waiting for? Embark on an adventure, test your skills, and let the excitement unfold at Game Zone. Get ready to immerse yourself in a world of limitless possibilities and endless fun. Join us today and let the games begin!</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Details Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="page-up">
+                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer__logo">
+                            <a href="{% url 'home' %}">
+                                <h4 style="color: white; font-weight: bold;">Game <span style="color: rgb(221, 41, 41);">Z</span>one</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer__nav">
+                            <ul>
+                                <li class="active"><a href="{% url 'home' %}">Homepage</a></li>
+                                <li><a href="{% url 'categories' %}">Categories</a></li>
+                                <li><a href="{% url 'blogdetails' %}">Our Blog</a></li>
+                                <li><a href="{% url 'signup' %}">Signup</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Game Zone</a>
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <!-- Footer Section End -->
+
+          <!-- Search model Begin -->
+          <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form" action="{% url 'search' %}">
+                    <input type="text" name="q" id="search-input" placeholder="Search here.....">
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/player.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/mixitup.min.js' %}"></script>
+        <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+
+    </html>
